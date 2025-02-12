@@ -38,3 +38,46 @@ The **Cool Kids Network** project aims to create an interactive WordPress-based 
 ## Additional Information
 - **Observability and Resilience**: I’ve incorporated logging to monitor important actions and to help diagnose any potential issues. Error handling mechanisms ensure that users have a smooth experience, even if something goes wrong.
 - **Future Improvements**: In the future, I plan to enhance the game aspect of the platform by adding interactive features such as in-game achievements, leaderboards, and more complex user interactions.
+
+##Project Structure
+The project is divided into a plugin and a theme. The plugin handles user management, including registration and role assignment, while the theme handles the presentation of the platform’s pages.
+
+python
+Copy
+Edit
+cool-kids-network/
+│
+├── wp-content/
+│   ├── plugins/
+│   │   ├── cool-kids-user-management/
+│   │   │   ├── cool-kids-user-management.php   # Main plugin file that initializes the plugin
+│   │   │   ├── includes/
+│   │   │   │   ├── api.php                    # Handles integration with randomuser.me API
+│   │   │   │   ├── functions.php              # Contains essential helper functions for the plugin
+│   │   
+│   ├── themes/
+│   │   ├── cool-kids-theme/
+│   │   │   ├── page-login.php                 # Page template for user login
+│   │   │   ├── page-signup.php                # Page template for user signup
+│   │   │   ├── page-dashboard.php             # Page template for user dashboard
+│   │   │   ├── page-all-user.php             # Page template to display all users (for admins)
+│   │   │   ├── admin.php                      # Page template for admin-specific functionalities
+│   │   │   ├── style.css                      # Main stylesheet for the theme
+│   │   │   ├── js/                           # JavaScript folder for front-end interactivity
+│
+└── README.md                                  # Project overview and setup instructions
+Directory Breakdown:
+wp-content/plugins/cool-kids-user-management:
+
+cool-kids-user-management.php: Main plugin file to initialize user management and integrate other components.
+includes/api.php: Handles interaction with the randomuser.me API for generating random user profiles.
+includes/functions.php: Contains functions for user registration, role assignment, and any additional logic.
+wp-content/themes/cool-kids-theme:
+
+page-login.php: Template for the login page.
+page-signup.php: Template for the sign-up page.
+page-dashboard.php: Template for the user’s dashboard.
+page-all-user.php: Admin view to see all users.
+admin.php: Admin-specific page for managing the platform.
+style.css: Stylesheet for the theme.
+js/: Folder for JavaScript files to enhance front-end interactions.
